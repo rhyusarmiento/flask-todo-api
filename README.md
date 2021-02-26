@@ -7,6 +7,46 @@
 - [Marshmallow-sqlalchemy](https://marshmallow-sqlalchemy.readthedocs.io/en/latest/)
 - [flask-cors](https://flask-cors.readthedocs.io/en/latest/)
 
+## routes
+
+### Create a single todo:
+```json
+{
+    "method": "POST",
+    "url": "https//localhost:5000/api/add-todo",
+    "body": {
+        "title": "Buy Food",
+        "done": false
+    },
+    "Content-Type": "application/json"
+}
+```
+### GET all todos:
+```json
+{
+    "method": "GET",
+    "url": "https//localhost:5000/api/get-all-todos",
+}
+```
+### PATCH a single todo:
+```json
+{
+    "method": "PATCH",
+    "url": "https//localhost:5000/api/edit-done/TODO_ID",
+    "body": {
+        "done": true
+    },
+    "Content-Type": "application/json"
+}
+```
+### DELETE a single todo:
+```json
+{
+    "method": "DELETE",
+    "url": "https//localhost:5000/api/delete-todo/TODO_ID",
+}
+```
+
 ## Installing the server
 - While in the `app` folder, run the following commands in your terminal 
 ```
