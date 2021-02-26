@@ -18,7 +18,6 @@ class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     done = db.Column(db.Boolean)
-
     def __init__(self, title, done):
         self.title = title
         self.done = done
@@ -29,6 +28,23 @@ class TodoSchema(ma.Schema):
 
 todo_schema = TodoSchema()
 todos_schema = TodoSchema(many=True)
+
+#create todo
+@app.route('/api/add-todo', methods=['POST'])
+def add_todo():
+    title = request.json['title']
+    done = request.json['done']
+    new_todo = Todo(title=title, done=done)
+    db.session.add(new_todo)
+    db.session.commit()
+    todo = Todo.query.get(new_todo.id)
+    print(todo)
+    print(todo_schema.jsonify(todo))
+    return todo_schema.jsonify(todo)
+
+#get single todo
+#edit todo
+#delete todo
 
 @app.route('/')
 def hello():
