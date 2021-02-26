@@ -13,7 +13,7 @@
 ```json
 {
     "method": "POST",
-    "url": "https//localhost:5000/api/add-todo",
+    "url": "http://localhost:5000/api/add-todo",
     "body": {
         "title": "Buy Food",
         "done": false
@@ -25,14 +25,14 @@
 ```json
 {
     "method": "GET",
-    "url": "https//localhost:5000/api/get-all-todos",
+    "url": "http://localhost:5000/api/get-all-todos",
 }
 ```
 ### PATCH a single todo:
 ```json
 {
     "method": "PATCH",
-    "url": "https//localhost:5000/api/edit-done/TODO_ID",
+    "url": "http://localhost:5000/api/edit-done/TODO_ID",
     "body": {
         "done": true
     },
@@ -43,7 +43,7 @@
 ```json
 {
     "method": "DELETE",
-    "url": "https//localhost:5000/api/delete-todo/TODO_ID",
+    "url": "http://localhost:5000/api/delete-todo/TODO_ID",
 }
 ```
 
