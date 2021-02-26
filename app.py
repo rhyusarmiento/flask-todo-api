@@ -55,6 +55,12 @@ def edit_done(todo_id):
     return todo_schema.jsonify(todo)
 
 #delete todo
+@app.route('/api/delete-todo/<todo_id>', methods=['DELETE'])
+def delete_todo(todo_id):
+    todo = Todo.query.get(todo_id)
+    db.session.delete(todo)
+    db.session.commit()
+    return "bye"
 
 @app.route('/')
 def hello():
